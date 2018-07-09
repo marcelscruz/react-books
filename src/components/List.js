@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import ListItem from './ListItem'
+import SelectInput from './SelectInput'
+import ItemModal from './ItemModal'
 
 class List extends Component {
   constructor(props) {
@@ -8,15 +10,18 @@ class List extends Component {
 
     this.state = {
       books: [],
-      offset: 2,
-      count: 5,
+      count: 10,
+      offset: 5,
+      page: 1,
+      selectedItem: 1,
+      // selectedItem: undefined,
     }
   }
 
   fetchBooks() {
-    const { offset, count } = this.state
+    const { count, offset } = this.state
 
-    axios.get(`/api/v1/items?_page=${offset}&_limit=${count}`).then(res => {
+    axios.get(`/api/v1/items?_start=${offset}&_limit=${count}`).then(res => {
       const books = res.data
       this.setState({
         books,
@@ -32,19 +37,71 @@ class List extends Component {
     ))
   }
 
+  onCountChange = optionSelected => {
+    const count = optionSelected.value
+    this.setState({
+      count,
+    })
+  }
+
+  onOffsetChange = optionSelected => {
+    const offset = optionSelected.value
+    this.setState({
+      offset,
+    })
+  }
+
+  handleSearch = () => {
+    console.log('search')
+    console.log(this.state.count)
+    console.log(this.state.offset)
+    this.fetchBooks()
+  }
+
+  handleClearSelectedOption = () => {
+    this.setState(() => ({
+      selectedItem: undefined,
+    }))
+  }
+
   componentDidMount() {
     this.fetchBooks()
   }
 
   render() {
-    console.log(this.state.books)
+    const { books, count, offset, selectedItem } = this.state
+    const options = [
+      { value: 5, label: '5 Items' },
+      { value: 10, label: '10 Items' },
+      { value: 15, label: '15 Items' },
+      { value: 20, label: '20 Items' },
+    ]
+
     return (
       <div>
-        {this.state.books.length === 0 ? (
+        <SelectInput
+          defaultValue={count}
+          onChange={this.onCountChange}
+          options={options}
+        />
+
+        <SelectInput
+          defaultValue={offset}
+          onChange={this.onOffsetChange}
+          options={options}
+        />
+
+        <button onClick={this.handleSearch}>Search</button>
+
+        {books.length === 0 ? (
           <h1>fetching books...</h1>
         ) : (
           this.renderBooksList()
         )}
+        <ItemModal
+          selectedItem={selectedItem}
+          handleClearSelectedOption={this.handleClearSelectedOption}
+        />
       </div>
     )
   }
