@@ -1,0 +1,18 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "image": "image url here",
+      "title": "title here",
+      "author": "author here",
+      "price": 3.33
+    },
+    {
+      "id": 2,
+      "image": "image url here 2",
+      "title": "title here 2",
+      "author": "author here 2",
+      "price": 2.22
+    }
+  ]
+}
