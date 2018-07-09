@@ -13,8 +13,7 @@ class List extends Component {
       count: 10,
       offset: 5,
       page: 1,
-      selectedItem: 1,
-      // selectedItem: undefined,
+      selectedItem: undefined,
     }
   }
 
@@ -32,7 +31,7 @@ class List extends Component {
   renderBooksList() {
     return this.state.books.map(book => (
       <div key={book.id}>
-        <ListItem book={book} />
+        <ListItem book={book} handleSelectedItem={this.handleSelectedItem} />
       </div>
     ))
   }
@@ -58,7 +57,14 @@ class List extends Component {
     this.fetchBooks()
   }
 
-  handleClearSelectedOption = () => {
+  handleSelectedItem = id => {
+    this.setState({
+      selectedItem: id,
+    })
+    console.log('item clicked', id)
+  }
+
+  handleClearSelectedItem = () => {
     this.setState(() => ({
       selectedItem: undefined,
     }))
@@ -100,7 +106,7 @@ class List extends Component {
         )}
         <ItemModal
           selectedItem={selectedItem}
-          handleClearSelectedOption={this.handleClearSelectedOption}
+          handleClearSelectedItem={this.handleClearSelectedItem}
         />
       </div>
     )

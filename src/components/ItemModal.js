@@ -1,21 +1,22 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Modal from 'react-modal'
+import ItemDetails from './ItemDetails'
 
 const ItemModal = props => (
   <Modal
     isOpen={!!props.selectedItem}
-    onRequestClose={props.handleClearSelectedOption}
+    onRequestClose={props.handleClearSelectedItem}
     contentLabel="Selected option"
     ariaHideApp={false}
     closeTimeoutMS={200}
     className="modal"
   >
-    <h3 className="modal__title">Selected Option</h3>
-    {/* {props.selectedOption && <p className='modal__body'>{props.selectedOption}</p>} */}
+    <h3 className="modal__title">Selected book</h3>
+    <ItemDetails selectedItem={props.selectedItem} />
     <button
       className="button modal__button"
-      onClick={props.handleClearSelectedOption}
+      onClick={props.handleClearSelectedItem}
     >
       Ok
     </button>
