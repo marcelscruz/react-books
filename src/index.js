@@ -1,12 +1,19 @@
+// ***** React ***** //
 import React from 'react'
 import ReactDOM from 'react-dom'
-import configureStore from './store/configureStore'
-import { Provider } from 'react-redux'
-import './styles/index.scss'
-import AppRouter from './routers/AppRouter'
-import registerServiceWorker from './registerServiceWorker'
 
-const store = configureStore()
+// ***** Redux ***** //
+import store from './store/configure-store'
+import { Provider } from 'react-redux'
+
+// ***** Actions ***** //
+// import { startSetBooks } from './actions/books'
+
+// ***** Styles ***** //
+import './styles/index.scss'
+
+// ***** Components ***** //
+import AppRouter from './router/AppRouter'
 
 const jsx = (
   <Provider store={store}>
@@ -14,5 +21,18 @@ const jsx = (
   </Provider>
 )
 
+// Render loader
 ReactDOM.render(jsx, document.getElementById('root'))
-// registerServiceWorker()
+// ReactDOM.render(<h1>Fetching books...</h1>, document.getElementById('root'))
+
+// Provide routes with access to the store
+
+// Render app
+// const renderApp = () => {
+//   ReactDOM.render(jsx, document.getElementById('root'))
+// }
+
+// Set fetched books in the store and then render app
+// startSetBooks().then(() => {
+//   renderApp()
+// })

@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Header from './Header'
+import List from './List'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>React App</h1>
-      </div>
-    )
-  }
-}
+const App = () => (
+  <div className="App">
+    <Header />
+    <List />
+  </div>
+)
 
 export default App

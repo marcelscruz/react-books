@@ -1,17 +1,163 @@
 {
-  "books": [
+  "items": [
     {
       "id": 1,
-      "image": "image url here",
+      "link": "/api/v1/items/1",
       "title": "title here",
       "author": "author here",
+      "image": "image url here",
       "price": 3.33
     },
     {
       "id": 2,
-      "image": "image url here 2",
+      "link": "/api/v1/items/2",
       "title": "title here 2",
       "author": "author here 2",
+      "image": "image url here 2",
+      "price": 2.22
+    },
+    {
+      "id": 3,
+      "link": "/api/v1/items/3",
+      "title": "title here",
+      "author": "author here",
+      "image": "image url here",
+      "price": 3.33
+    },
+    {
+      "id": 4,
+      "link": "/api/v1/items/4",
+      "title": "title here 2",
+      "author": "author here 2",
+      "image": "image url here 2",
+      "price": 2.22
+    },
+    {
+      "id": 5,
+      "link": "/api/v1/items/5",
+      "title": "title here",
+      "author": "author here",
+      "image": "image url here",
+      "price": 3.33
+    },
+    {
+      "id": 6,
+      "link": "/api/v1/items/6",
+      "title": "title here 2",
+      "author": "author here 2",
+      "image": "image url here 2",
+      "price": 2.22
+    },
+    {
+      "id": 7,
+      "link": "/api/v1/items/7",
+      "title": "title here",
+      "author": "author here",
+      "image": "image url here",
+      "price": 3.33
+    },
+    {
+      "id": 8,
+      "link": "/api/v1/items/8",
+      "title": "title here 2",
+      "author": "author here 2",
+      "image": "image url here 2",
+      "price": 2.22
+    },
+    {
+      "id": 9,
+      "link": "/api/v1/items/9",
+      "title": "title here",
+      "author": "author here",
+      "image": "image url here",
+      "price": 3.33
+    },
+    {
+      "id": 10,
+      "link": "/api/v1/items/10",
+      "title": "title here 2",
+      "author": "author here 2",
+      "image": "image url here 2",
+      "price": 2.22
+    },
+    {
+      "id": 11,
+      "link": "/api/v1/items/11",
+      "title": "title here",
+      "author": "author here",
+      "image": "image url here",
+      "price": 3.33
+    },
+    {
+      "id": 12,
+      "link": "/api/v1/items/12",
+      "title": "title here 2",
+      "author": "author here 2",
+      "image": "image url here 2",
+      "price": 2.22
+    },
+    {
+      "id": 13,
+      "link": "/api/v1/items/13",
+      "title": "title here",
+      "author": "author here",
+      "image": "image url here",
+      "price": 3.33
+    },
+    {
+      "id": 14,
+      "link": "/api/v1/items/14",
+      "title": "title here 2",
+      "author": "author here 2",
+      "image": "image url here 2",
+      "price": 2.22
+    },
+    {
+      "id": 15,
+      "link": "/api/v1/items/15",
+      "title": "title here",
+      "author": "author here",
+      "image": "image url here",
+      "price": 3.33
+    },
+    {
+      "id": 16,
+      "link": "/api/v1/items/16",
+      "title": "title here 2",
+      "author": "author here 2",
+      "image": "image url here 2",
+      "price": 2.22
+    },
+    {
+      "id": 17,
+      "link": "/api/v1/items/17",
+      "title": "title here",
+      "author": "author here",
+      "image": "image url here",
+      "price": 3.33
+    },
+    {
+      "id": 18,
+      "link": "/api/v1/items/18",
+      "title": "title here 2",
+      "author": "author here 2",
+      "image": "image url here 2",
+      "price": 2.22
+    },
+    {
+      "id": 19,
+      "link": "/api/v1/items/19",
+      "title": "title here",
+      "author": "author here",
+      "image": "image url here",
+      "price": 3.33
+    },
+    {
+      "id": 20,
+      "link": "/api/v1/items/20",
+      "title": "title here 2",
+      "author": "author here 2",
+      "image": "image url here 2",
       "price": 2.22
     }
   ]

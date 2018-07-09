@@ -5,7 +5,7 @@
   "proxy": "http://localhost:3004",
   "scripts": {
     "client": "node scripts/start.js",
-    "json:server": "cd api && json-server --watch db.json --port 3004",
+    "json:server": "cd api && json-server --watch db.json --port 3004 --routes routes.json",
     "dev": "concurrently --kill-others-on-fail \"yarn json:server\" \"yarn client\"",
     "start": "yarn json:server",
     "heroku-postbuild": "yarn && yarn run build",
@@ -45,6 +45,7 @@
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
+    "prop-types": "^15.6.2",
     "raf": "3.4.0",
     "react": "^16.4.1",
     "react-dev-utils": "^5.0.1",
