@@ -5,7 +5,7 @@ import List from './List'
 const App = () => (
   <div className="App">
     <Header />
-    <List />
+    {/* <List /> */}
   </div>
 )
 
