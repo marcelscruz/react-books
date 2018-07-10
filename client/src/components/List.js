@@ -11,7 +11,7 @@ class List extends Component {
     this.state = {
       books: [],
       count: 10,
-      offset: 5,
+      offset: undefined,
       page: 1,
       selectedItemId: undefined,
     }
@@ -20,12 +20,21 @@ class List extends Component {
   fetchBooks() {
     const { count, offset } = this.state
 
-    axios.get(`/api/v1/items?_start=${offset}&_limit=${count}`).then(res => {
-      const books = res.data
-      this.setState({
-        books,
+    axios
+      .get('/api/v1/items', {
+        params: {
+          count,
+          offset,
+        },
       })
-    })
+      .then(res => {
+        const books = res.data.items
+        this.setState({
+          books,
+        })
+        console.log(books)
+        console.log(res)
+      })
   }
 
   renderBooksList() {
