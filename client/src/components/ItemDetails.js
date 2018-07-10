@@ -13,13 +13,12 @@ class ItemDetails extends Component {
 
   componentDidMount() {
     const id = this.props.selectedItemId
-    console.log('details mounted', id)
     axios.get(`api/v1/items/${id}`).then(res => {
       const book = res.data
       this.setState({
         book,
       })
-      console.log('response here', res)
+      console.log(res)
     })
   }
 

@@ -17,6 +17,8 @@ module.exports = app => {
 
     const booksList = []
 
+    // Loop through objects to add them to array including
+    // only necessary properties
     db.books.forEach(book => {
       booksList.push({
         id: book.id,

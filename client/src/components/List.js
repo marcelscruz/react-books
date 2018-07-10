@@ -68,7 +68,6 @@ class List extends Component {
     this.setState({
       selectedItemId: id,
     })
-    console.log('item clicked', id)
   }
 
   handleClearSelectedItem = () => {
