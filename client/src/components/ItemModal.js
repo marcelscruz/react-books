@@ -12,13 +12,9 @@ const ItemModal = props => (
     closeTimeoutMS={200}
     className="modal"
   >
-    <h3 className="modal__title">Selected book</h3>
     <ItemDetails selectedItemId={props.selectedItemId} />
-    <button
-      className="button modal__button"
-      onClick={props.handleClearSelectedItem}
-    >
-      Ok
+    <button className="modal__button" onClick={props.handleClearSelectedItem}>
+      Close
     </button>
   </Modal>
 )

@@ -125,7 +125,7 @@ class List extends Component {
         </div>
 
         {books.length === 0 ? (
-          <h1>fetching books...</h1>
+          <h1>Fetching books...</h1>
         ) : (
           <div className="list-item">{this.renderBooksList()}</div>
         )}

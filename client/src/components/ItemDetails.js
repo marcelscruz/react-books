@@ -29,17 +29,21 @@ class ItemDetails extends Component {
   renderBookDetails() {
     const { id, title, author, price, image } = this.state.book
     return (
-      <div>
-        <h2>ID: {id}</h2>
-        <h2>Title: {title}</h2>
-        <h2>Author: {author}</h2>
-        <h2>Price: {price}0</h2>
-        <div
-          className="book-cover"
-          style={{
-            background: `url(${image}) no-repeat center center / cover`,
-          }}
-        />
+      <div className="item-details">
+        <div className="item-details__picture">
+          <div
+            className="book-cover"
+            style={{
+              background: `url(${image}) no-repeat center center / cover`,
+            }}
+          />
+        </div>
+        <div className="item-details__description">
+          <h3>ID: {id}</h3>
+          <h3>Title: {title}</h3>
+          <h3>Author: {author}</h3>
+          <h3>Price: {price}0</h3>
+        </div>
       </div>
     )
   }

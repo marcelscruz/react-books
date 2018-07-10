@@ -1,4 +1,30 @@
+.item-details {
+  display: flex;
+  height: 32rem;
+  width: 100%;
+}
+
+.item-details__picture {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 40%;
+}
+
 .book-cover {
-  height: 200px;
-  width: 100px;
+  box-shadow: $shadow;
+  height: 25rem;
+  width: 15rem;
+}
+
+.item-details__description {
+  padding: 5rem 3rem;
+  text-align: justify;
+  width: 60%;
+}
+
+.item-details__description h3 {
+  font-size: 1.3rem;
+  font-weight: 200;
+  padding: 0.4rem;
 }
