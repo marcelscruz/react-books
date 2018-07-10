@@ -10,10 +10,12 @@ class SelectInput extends Component {
   render() {
     return (
       <Select
+        className="select-input"
         value={this.props.value}
         onChange={this.handleChange}
         options={this.props.options}
         clearable={false}
+        searchable={false}
       />
     )
   }

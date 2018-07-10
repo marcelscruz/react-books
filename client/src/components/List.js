@@ -38,9 +38,12 @@ class List extends Component {
   }
 
   renderBooksList() {
-    return this.state.books.map(book => (
+    const books = this.state.books
+
+    return books.map((book, index) => (
       <div key={book.id}>
         <ListItem book={book} handleSelectedItem={this.handleSelectedItem} />
+        {books.length !== index + 1 && <div className="list-item__separator" />}
       </div>
     ))
   }
@@ -101,25 +104,30 @@ class List extends Component {
     ]
 
     return (
-      <div>
-        <SelectInput
-          value={count}
-          onChange={this.onCountChange}
-          options={countOptions}
-        />
+      <div className="list">
+        <div className="list__filter">
+          <p className="select-input__label">Show</p>
+          <SelectInput
+            value={count}
+            onChange={this.onCountChange}
+            options={countOptions}
+          />
+          <p className="select-input__label">Skip</p>
+          <SelectInput
+            value={offset}
+            onChange={this.onOffsetChange}
+            options={offsetOptions}
+          />
 
-        <SelectInput
-          value={offset}
-          onChange={this.onOffsetChange}
-          options={offsetOptions}
-        />
-
-        <button onClick={this.handleSearch}>Search</button>
+          <button class="list__filter__button" onClick={this.handleSearch}>
+            Search
+          </button>
+        </div>
 
         {books.length === 0 ? (
           <h1>fetching books...</h1>
         ) : (
-          this.renderBooksList()
+          <div className="list-item">{this.renderBooksList()}</div>
         )}
         <ItemModal
           selectedItemId={selectedItemId}

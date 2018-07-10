@@ -1,17 +1,20 @@
 .header {
   align-items: center;
   background: $off-black;
+  border-bottom: $off-white 0.1rem solid;
   box-shadow: $shadow;
   color: $off-white;
   display: flex;
   font-size: $s-size;
   display: flex;
-  height: 15%;
+  height: 5rem;
   width: 100vw;
+  z-index: 1;
 }
 
 .header__title {
-  margin-left: -30rem;
+  left: -20rem;
+  position: relative;
 }
 
 .header__button {
@@ -19,9 +22,9 @@
   border-radius: 0.3rem;
   color: $off-white;
   font-size: 1.3rem;
-  // height: 2rem;
-  margin-left: -20rem;
+  left: -10rem;
   padding: 0.7rem;
+  position: relative;
   width: 7rem;
   transition: linear 0.2s;
 }

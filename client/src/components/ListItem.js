@@ -5,12 +5,14 @@ const ListItem = props => {
   const { id, title } = props.book
   return (
     <div
+      className="item"
       onClick={() => {
         props.handleSelectedItem(id)
       }}
     >
-      <h1>ID: {id}</h1>
-      <h1>Title: {title}</h1>
+      <h1>
+        {id} - {title}
+      </h1>
     </div>
   )
 }

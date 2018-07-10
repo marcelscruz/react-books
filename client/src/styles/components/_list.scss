@@ -1,0 +1,49 @@
+.list__filter {
+  align-items: center;
+  background: $off-black;
+  border-bottom: $off-white 0.1rem solid;
+  border-left: $off-white 0.1rem solid;
+  border-right: $off-white 0.1rem solid;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  box-shadow: $shadow;
+  color: $off-white;
+  justify-content: center;
+  display: flex;
+  height: 4rem;
+  margin: 0 0 1rem 0;
+  position: relative;
+  top: -2px;
+  width: 40rem;
+  z-index: 2;
+}
+
+.select-input__label {
+  font-size: 1rem;
+}
+
+.select-input {
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 2rem 0 0.5rem;
+  outline: none;
+  width: 8rem;
+}
+
+.list__filter__button {
+  background: $off-black;
+  border: $off-white solid 0.1rem;
+  border-radius: 0.3rem;
+  color: $off-white;
+  cursor: pointer;
+  font-size: 1rem;
+  outline: none;
+  padding: 0.5rem;
+  transition: linear 0.2s;
+  width: 7rem;
+}
+
+.list__filter__button:hover {
+  background: $off-white;
+  color: $off-black;
+}

@@ -1,0 +1,30 @@
+.list-item {
+  background: darken($off-white, 5%);
+  border: $off-black solid 0.1rem;
+  border-radius: 0.3rem;
+  margin: 2rem 0;
+}
+
+.item {
+  // background: lightblue;
+  display: flex;
+  padding: 1.5rem 1.5rem 1.5rem 5rem;
+  transition: linear 0.3s;
+}
+
+.item:hover {
+  background: darken($off-white, 15%);
+  cursor: pointer;
+}
+
+.item h1 {
+  font-weight: 400;
+}
+
+.list-item__separator {
+  height: 0.2rem;
+  // background: $off-black;
+  border-bottom: $off-black solid 0.1rem;
+  margin: 0 auto;
+  width: 30rem;
+}
