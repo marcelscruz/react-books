@@ -10,7 +10,7 @@ class SelectInput extends Component {
   render() {
     return (
       <Select
-        value={this.props.defaultValue}
+        value={this.props.value}
         onChange={this.handleChange}
         options={this.props.options}
         clearable={false}
@@ -20,9 +20,13 @@ class SelectInput extends Component {
 }
 
 SelectInput.propTypes = {
-  defaultValue: PropTypes.number.isRequired,
+  value: PropTypes.any,
   options: PropTypes.arrayOf(PropTypes.object).isRequired,
   onChange: PropTypes.func.isRequired,
+}
+
+SelectInput.defaultProps = {
+  value: { value: undefined, label: 'Choose' },
 }
 
 export default SelectInput

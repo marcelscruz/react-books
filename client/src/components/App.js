@@ -3,7 +3,7 @@ import Header from './Header'
 import List from './List'
 
 const App = () => (
-  <div className="App">
+  <div className="app">
     <Header />
     <List />
   </div>

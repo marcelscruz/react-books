@@ -2,7 +2,7 @@ import React from 'react'
 import { Router, Route, Switch } from 'react-router-dom'
 import createHistory from 'history/createBrowserHistory'
 import App from '../components/App'
-// import Item from '../components/Item'
+import Add from '../components/Add'
 
 export const history = createHistory()
 
@@ -11,7 +11,7 @@ const AppRouter = () => (
     <div>
       <Switch>
         <Route path="/" component={App} exact={true} />
-        {/* <Route path="/book/:id" component={Item} /> */}
+        <Route path="/add" component={Add} />
       </Switch>
     </div>
   </Router>

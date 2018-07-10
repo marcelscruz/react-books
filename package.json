@@ -17,7 +17,7 @@
   "scripts": {
     "client": "cd client && yarn start",
     "server": "nodemon server.js",
-    "json:server": "cd db && json-server --watch db.json --port 3004 --routes routes.json",
+    "json:server": "cd db && json-server --watch db.json --port 3004",
     "dev": "concurrently --kill-others-on-fail \"yarn json:server\" \"yarn server\" \"yarn client\"",
     "heroku-postbuild": "cd client && yarn && yarn run build"
   },

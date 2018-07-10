@@ -1,33 +1,36 @@
 const axios = require('axios')
-const db = require('../db/db.json')
 
 module.exports = app => {
   // Endpoint to fetch all the list of books
   app.get('/api/v1/items', async (req, res, next) => {
-    // console.log(req.query)
+    res.setHeader('Content-Type', 'application/json')
     const { count, offset } = req.query
 
-    // Some work should be done here to provide pagination
-    // if (count) {
-    //   console.log('there is count', count)
-    // }
-    // if (offset) {
-    //   console.log('there is offset', offset)
-    // }
+    let url = `http://localhost:3004/books`
 
-    const booksList = []
+    if (offset && !count) {
+      url = `http://localhost:3004/books?_start=${offset}`
+    } else if (!offset && count) {
+      url = `http://localhost:3004/books?_limit=${count}`
+    } else if (offset && count) {
+      url = `http://localhost:3004/books?_start=${offset}&_limit=${count}`
+    }
 
-    // Loop through objects to add them to array including
-    // only necessary properties
-    db.books.forEach(book => {
-      booksList.push({
-        id: book.id,
-        link: `/api/v1/items/${book.id}`,
-        title: book.title,
+    console.log('url', url)
+
+    // Using json-server
+    axios.get(url).then(booksFetched => {
+      const booksList = []
+
+      booksFetched.data.forEach(book => {
+        booksList.push({
+          id: book.id,
+          link: `/api/v1/items/${book.id}`,
+          title: book.title,
+        })
       })
-    })
 
-    res.setHeader('Content-Type', 'application/json')
-    res.send(booksList)
+      res.send(booksList)
+    })
   })
 }

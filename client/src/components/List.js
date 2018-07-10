@@ -11,8 +11,7 @@ class List extends Component {
     this.state = {
       books: [],
       count: 10,
-      offset: 5,
-      page: 1,
+      offset: 0,
       selectedItemId: undefined,
     }
   }
@@ -32,6 +31,9 @@ class List extends Component {
         this.setState({
           books,
         })
+      })
+      .catch(error => {
+        console.log(error)
       })
   }
 
@@ -82,7 +84,16 @@ class List extends Component {
 
   render() {
     const { books, count, offset, selectedItemId } = this.state
-    const options = [
+    const countOptions = [
+      { value: undefined, label: 'All' },
+      { value: 5, label: '5 Items' },
+      { value: 10, label: '10 Items' },
+      { value: 15, label: '15 Items' },
+      { value: 20, label: '20 Items' },
+    ]
+
+    const offsetOptions = [
+      { value: 0, label: 'None' },
       { value: 5, label: '5 Items' },
       { value: 10, label: '10 Items' },
       { value: 15, label: '15 Items' },
@@ -92,15 +103,15 @@ class List extends Component {
     return (
       <div>
         <SelectInput
-          defaultValue={count}
+          value={count}
           onChange={this.onCountChange}
-          options={options}
+          options={countOptions}
         />
 
         <SelectInput
-          defaultValue={offset}
+          value={offset}
           onChange={this.onOffsetChange}
-          options={options}
+          options={offsetOptions}
         />
 
         <button onClick={this.handleSearch}>Search</button>

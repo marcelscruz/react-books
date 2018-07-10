@@ -2,143 +2,206 @@
   "books": [
     {
       "id": 1,
-      "title": "title here",
-      "author": "author here",
-      "image": "image url here",
-      "price": 3.33
+      "title": "Frankstein",
+      "author": "Mary Shelley",
+      "image": "https://covers.openlibrary.org/w/id/311591-L.jpg",
+      "price": 19.9
     },
     {
       "id": 2,
-      "title": "title here 2",
-      "author": "author here 2",
-      "image": "image url here 2",
-      "price": 2.22
+      "title": "Twenty Thousand Leagues Under the Sea",
+      "author": "Jules Verne",
+      "image": "https://covers.openlibrary.org/w/id/1893213-L.jpg",
+      "price": 9.9
     },
     {
       "id": 3,
-      "title": "title here",
-      "author": "author here",
-      "image": "image url here",
-      "price": 3.33
+      "title": "The Time Machine",
+      "author": "H. G. Wells",
+      "image": "https://covers.openlibrary.org/w/id/368524-L.jpg",
+      "price": 29.9
     },
     {
       "id": 4,
-      "title": "title here 2",
-      "author": "author here 2",
-      "image": "image url here 2",
-      "price": 2.22
+      "title": "Journey to the Center of the Earth",
+      "author": "Jules Verne",
+      "image": "https://covers.openlibrary.org/w/id/295454-L.jpg",
+      "price": 29.9
     },
     {
       "id": 5,
-      "title": "title here",
-      "author": "author here",
-      "image": "image url here",
-      "price": 3.33
+      "title": "The invisible man",
+      "author": "H. G. Wells",
+      "image": "https://covers.openlibrary.org/w/id/295740-L.jpg",
+      "price": 9.9
     },
     {
       "id": 6,
-      "title": "title here 2",
-      "author": "author here 2",
-      "image": "image url here 2",
-      "price": 2.22
+      "title": "The War of the Worlds",
+      "author": "H. G. Wells",
+      "image": "https://covers.openlibrary.org/w/id/7885473-L.jpg",
+      "price": 19.9
     },
     {
       "id": 7,
-      "title": "title here",
-      "author": "author here",
-      "image": "image url here",
-      "price": 3.33
+      "title": "Fahrenheit 451",
+      "author": "Ray Bradbury",
+      "image": "https://covers.openlibrary.org/w/id/8200819-L.jpg",
+      "price": 9.9
     },
     {
       "id": 8,
-      "title": "title here 2",
-      "author": "author here 2",
-      "image": "image url here 2",
-      "price": 2.22
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "image": "https://covers.openlibrary.org/w/id/7877366-L.jpg",
+      "price": 29.9
     },
     {
       "id": 9,
-      "title": "title here",
-      "author": "author here",
-      "image": "image url here",
-      "price": 3.33
+      "title": "Flatland: A Romance of Many Dimensions",
+      "author": "Edwin Abbott Abbott",
+      "image": "https://covers.openlibrary.org/w/id/1972754-L.jpg",
+      "price": 9.9
     },
     {
       "id": 10,
-      "title": "title here 2",
-      "author": "author here 2",
-      "image": "image url here 2",
-      "price": 2.22
+      "title": "Island of Doctor Moreau",
+      "author": "H. G. Wells",
+      "image": "https://covers.openlibrary.org/w/id/297747-L.jpg",
+      "price": 19.9
     },
     {
       "id": 11,
-      "title": "title here",
-      "author": "author here",
-      "image": "image url here",
-      "price": 3.33
+      "title": "Looking Backward, 2000-1887",
+      "author": "Edward Bellamy",
+      "image": "https://covers.openlibrary.org/w/id/2367809-L.jpg",
+      "price": 29.9
     },
     {
       "id": 12,
-      "title": "title here 2",
-      "author": "author here 2",
-      "image": "image url here 2",
-      "price": 2.22
+      "title": "Ender's Game",
+      "author": "Orson Scott Card",
+      "image": "https://covers.openlibrary.org/w/id/8200816-L.jpg",
+      "price": 19.9
     },
     {
       "id": 13,
-      "title": "title here",
-      "author": "author here",
-      "image": "image url here",
-      "price": 3.33
+      "title": "A Clockwork Orange",
+      "author": "Anthony Burgess",
+      "image": "https://covers.openlibrary.org/w/id/7883936-L.jpg",
+      "price": 9.9
     },
     {
       "id": 14,
-      "title": "title here 2",
-      "author": "author here 2",
-      "image": "image url here 2",
-      "price": 2.22
+      "title": "The Restaurant at the End of the Universe",
+      "author": "Douglas Adams",
+      "image": "https://covers.openlibrary.org/w/id/8151234-L.jpg",
+      "price": 29.9
     },
     {
       "id": 15,
-      "title": "title here",
-      "author": "author here",
-      "image": "image url here",
-      "price": 3.33
+      "title": "The Iron Heel",
+      "author": "Jack London",
+      "image": "https://covers.openlibrary.org/w/id/111538-L.jpg",
+      "price": 9.9
     },
     {
       "id": 16,
-      "title": "title here 2",
-      "author": "author here 2",
-      "image": "image url here 2",
-      "price": 2.22
+      "title": "A Game of Thrones",
+      "author": "George R. R. Martin",
+      "image": "https://covers.openlibrary.org/w/id/8200812-L.jpg",
+      "price": 19.9
     },
     {
       "id": 17,
-      "title": "title here",
-      "author": "author here",
-      "image": "image url here",
-      "price": 3.33
+      "title": "The Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "image": "https://covers.openlibrary.org/w/id/7890581-L.jpg",
+      "price": 29.9
     },
     {
       "id": 18,
-      "title": "title here 2",
-      "author": "author here 2",
-      "image": "image url here 2",
-      "price": 2.22
+      "title": "The Mysterious Island",
+      "author": "Jules Verne",
+      "image": "https://covers.openlibrary.org/b/id/6542663-L.jpg",
+      "price": 29.9
     },
     {
       "id": 19,
-      "title": "title here",
-      "author": "author here",
-      "image": "image url here",
-      "price": 3.33
+      "title": "Charlie and the Great Glass Elevator",
+      "author": "Roald Dahl",
+      "image": "https://covers.openlibrary.org/w/id/28100-L.jpg",
+      "price": 19.9
     },
     {
       "id": 20,
-      "title": "title here 2",
-      "author": "author here 2",
-      "image": "image url here 2",
-      "price": 2.22
+      "title": "A Princess of Mars",
+      "author": "Edgar Rice Burroughs",
+      "image": "https://covers.openlibrary.org/w/id/1726773-L.jpg",
+      "price": 9.9
+    },
+    {
+      "id": 21,
+      "title": "Solaris",
+      "author": "Stanislaw Lem",
+      "image": "https://covers.openlibrary.org/w/id/116520-L.jpg",
+      "price": 9.9
+    },
+    {
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "image": "https://covers.openlibrary.org/w/id/7446958-L.jpg",
+      "price": 19.9,
+      "id": 22
+    },
+    {
+      "title": "Deathlands",
+      "author": "James Axler",
+      "image": "https://covers.openlibrary.org/w/id/1472064-L.jpg",
+      "price": 19.9,
+      "id": 23
+    },
+    {
+      "title": "The Chessmen of Mars",
+      "author": "Edgar Rice Burroughs",
+      "image": "https://covers.openlibrary.org/w/id/1930755-L.jpg",
+      "price": 19.9,
+      "id": 24
+    },
+    {
+      "title": "The First Men in the Moon",
+      "author": "H. G. Wells",
+      "image": "https://covers.openlibrary.org/w/id/606066-L.jpg",
+      "price": 9.9,
+      "id": 25
+    },
+    {
+      "title": "The Lost World",
+      "author": "Michael Crichton",
+      "image": "https://covers.openlibrary.org/w/id/77726-L.jpg",
+      "price": 9.9,
+      "id": 26
+    },
+    {
+      "title": "The Illustrated Man",
+      "author": "Ray Bradbury",
+      "price": 19.9,
+      "image": "https://covers.openlibrary.org/w/id/7237587-L.jpg",
+      "id": 27
+    },
+    {
+      "title": "2001: A Space Odyssey",
+      "author": "Arthur C. Clarke",
+      "price": 9.9,
+      "image": "https://covers.openlibrary.org/w/id/908995-L.jpg",
+      "id": 28
+    },
+    {
+      "title": "Timeline",
+      "author": "Michael Crichton",
+      "price": 19.9,
+      "image": "https://covers.openlibrary.org/w/id/7024773-L.jpg",
+      "id": 29
     }
   ]
 }
