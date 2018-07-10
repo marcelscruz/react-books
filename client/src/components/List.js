@@ -11,7 +11,7 @@ class List extends Component {
     this.state = {
       books: [],
       count: 10,
-      offset: undefined,
+      offset: 5,
       page: 1,
       selectedItemId: undefined,
     }
@@ -28,12 +28,10 @@ class List extends Component {
         },
       })
       .then(res => {
-        const books = res.data.items
+        const books = res.data
         this.setState({
           books,
         })
-        console.log(books)
-        console.log(res)
       })
   }
 

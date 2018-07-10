@@ -1,4 +1,5 @@
 const express = require('express')
+const paginate = require('express-paginate')
 const path = require('path')
 const bodyParser = require('body-parser')
 
@@ -9,12 +10,16 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')))
 }
 
+// Aplly pagination functionality to all routes
+app.use(paginate.middleware(10, 50))
+
 // Body Parser Middleware
 // app.use(bodyParser.json())
 // app.use(bodyParser.urlencoded({ extended: false }))
 
 // Routes
-require('./routes/booksAPI')(app)
+require('./routes/fetchAll')(app)
+require('./routes/fetchByID')(app)
 
 const PORT = process.env.PORT || 5000
 
