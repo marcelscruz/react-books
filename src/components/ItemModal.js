@@ -5,7 +5,7 @@ import ItemDetails from './ItemDetails'
 
 const ItemModal = props => (
   <Modal
-    isOpen={!!props.selectedItem}
+    isOpen={!!props.selectedItemId}
     onRequestClose={props.handleClearSelectedItem}
     contentLabel="Selected option"
     ariaHideApp={false}
@@ -13,7 +13,7 @@ const ItemModal = props => (
     className="modal"
   >
     <h3 className="modal__title">Selected book</h3>
-    <ItemDetails selectedItem={props.selectedItem} />
+    <ItemDetails selectedItemId={props.selectedItemId} />
     <button
       className="button modal__button"
       onClick={props.handleClearSelectedItem}
@@ -24,11 +24,12 @@ const ItemModal = props => (
 )
 
 ItemModal.propTypes = {
-  selectedItem: PropTypes.number,
+  selectedItemId: PropTypes.number,
+  handleClearSelectedItem: PropTypes.func.isRequired,
 }
 
 ItemModal.defaultProps = {
-  selectedItem: undefined,
+  selectedItemId: undefined,
 }
 
 export default ItemModal

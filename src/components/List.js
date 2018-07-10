@@ -13,7 +13,7 @@ class List extends Component {
       count: 10,
       offset: 5,
       page: 1,
-      selectedItem: undefined,
+      selectedItemId: undefined,
     }
   }
 
@@ -59,14 +59,14 @@ class List extends Component {
 
   handleSelectedItem = id => {
     this.setState({
-      selectedItem: id,
+      selectedItemId: id,
     })
     console.log('item clicked', id)
   }
 
   handleClearSelectedItem = () => {
     this.setState(() => ({
-      selectedItem: undefined,
+      selectedItemId: undefined,
     }))
   }
 
@@ -75,7 +75,7 @@ class List extends Component {
   }
 
   render() {
-    const { books, count, offset, selectedItem } = this.state
+    const { books, count, offset, selectedItemId } = this.state
     const options = [
       { value: 5, label: '5 Items' },
       { value: 10, label: '10 Items' },
@@ -105,7 +105,7 @@ class List extends Component {
           this.renderBooksList()
         )}
         <ItemModal
-          selectedItem={selectedItem}
+          selectedItemId={selectedItemId}
           handleClearSelectedItem={this.handleClearSelectedItem}
         />
       </div>
