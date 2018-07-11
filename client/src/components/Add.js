@@ -1,37 +1,44 @@
-import React, { Component } from 'react'
+// ***** React ***** //
+import React from 'react'
+
+// ***** Libraries ***** //
 import axios from 'axios'
+
+// ***** Components ***** //
 import Form from './Form'
 
-class Add extends Component {
-  onSubmit = book => {
-    const { title, author, price, image } = book
-    const parsedPrice = parseFloat(price)
+const Add = ({ history }) => {
+  // Method passed to Form as props
+  const onSubmit = book => {
+    const { author, image, price, title } = book
+    const parsedPrice = parseFloat(price) // Price is passed as string from Form
 
+    // Communicating directly to JSON Server
     axios
       .post('http://localhost:3004/books', {
-        title,
         author,
-        price: parsedPrice,
         image,
+        price: parsedPrice,
+        title,
       })
-      .then(res => {
-        this.props.history.push('/')
+      .then(() => {
+        // In success, return to List
+        history.push('/')
       })
       .catch(error => {
+        // In failure, log error
         console.log(error)
       })
   }
 
-  render() {
-    return (
-      <div className="section">
-        <div className="section__header">
-          <h1>Add book</h1>
-        </div>
-        <Form onSubmit={this.onSubmit} />
+  return (
+    <div className="section">
+      <div className="section__header">
+        <h1>Add book</h1>
       </div>
-    )
-  }
+      <Form onSubmit={onSubmit} />
+    </div>
+  )
 }
 
 export default Add

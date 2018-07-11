@@ -12,12 +12,3 @@
   width: 100vw;
   z-index: 1;
 }
-
-.header__button {
-  @extend .button;
-}
-
-.header__button:hover {
-  background: $off-white;
-  color: $off-black;
-}

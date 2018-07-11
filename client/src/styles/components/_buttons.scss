@@ -1,11 +1,54 @@
 .button {
   border: $off-white solid 0.1rem;
   border-radius: 0.3rem;
+  box-shadow: $shadow;
   color: $off-white;
   cursor: pointer;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   outline: none;
   padding: 0.7rem;
   width: 7rem;
   transition: linear 0.2s;
+}
+
+.add__button {
+  @extend .button;
+  padding: 0.4rem;
+}
+
+.add__button:hover,
+.add__button:focus {
+  background: $off-white;
+  color: $off-black;
+}
+
+.form__button {
+  @extend .button;
+
+  background: darken($off-white, 5%);
+  border-color: $off-black;
+  color: $off-black;
+  font-size: 1rem;
+  margin: 0 1rem;
+  padding: 0.5rem;
+}
+
+.form__button:hover,
+.form__button:focus {
+  background: $off-black;
+  color: $off-white;
+}
+
+.modal__button {
+  @extend .button;
+
+  background: $light-blue;
+  font-size: 1.3rem;
+  margin: 0 0.5rem;
+}
+
+.modal__button:hover,
+.modal__button:focus {
+  background: $off-white;
+  color: $light-blue;
 }

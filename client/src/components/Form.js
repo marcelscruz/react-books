@@ -1,11 +1,15 @@
+// ***** React ***** //
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
+// ***** Util ***** //
 import { history } from '../router/AppRouter'
 
 class Form extends Component {
   constructor(props) {
     super(props)
 
+    // Either use default props or props passed from Edit
     this.state = {
       id: props.book.id,
       title: props.book.title,
@@ -15,6 +19,7 @@ class Form extends Component {
     }
   }
 
+  // Handle title input change
   onTitleChange = e => {
     const title = e.target.value
     this.setState({
@@ -22,6 +27,7 @@ class Form extends Component {
     })
   }
 
+  // Handle author input change
   onAuthorChange = e => {
     const author = e.target.value
     this.setState({
@@ -29,6 +35,7 @@ class Form extends Component {
     })
   }
 
+  // Handle price input change
   onPriceChange = e => {
     const price = e.target.value
     this.setState({
@@ -36,6 +43,7 @@ class Form extends Component {
     })
   }
 
+  // Handle image input change
   onImageChange = e => {
     const image = e.target.value
     this.setState({
@@ -43,11 +51,13 @@ class Form extends Component {
     })
   }
 
+  // Handle form submit
   onSubmit = e => {
-    e.preventDefault()
+    e.preventDefault() // Avoid page refresh caused by form submit
 
     const { id, title, author, price, image } = this.state
 
+    // Method passed as props, will communicate to JSON Server
     this.props.onSubmit({
       id,
       title,
@@ -60,7 +70,7 @@ class Form extends Component {
   render() {
     return (
       <div className="content-container">
-        <form onSubmit={this.onSubmit} className="form">
+        <form className="form">
           <div className="input__box">
             <label>Title</label>
             <input
@@ -111,7 +121,9 @@ class Form extends Component {
           </div>
 
           <div className="form__buttons__container">
-            <button className="form__button">Save</button>
+            <button className="form__button" onClick={this.onSubmit}>
+              Save
+            </button>
             <button
               className="form__button"
               onClick={() => {
@@ -139,7 +151,7 @@ Form.defaultProps = {
     id: '',
     title: '',
     author: '',
-    price: 0,
+    price: '',
     image: '',
   },
 }

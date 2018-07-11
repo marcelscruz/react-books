@@ -1,5 +1,8 @@
+// ***** React ***** //
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
+// ***** Libraries ***** //
 import axios from 'axios'
 
 class ItemDetails extends Component {
@@ -7,27 +10,15 @@ class ItemDetails extends Component {
     super(props)
 
     this.state = {
-      book: [],
+      book: {},
     }
   }
 
-  componentDidMount() {
-    const id = this.props.selectedItemId
-    axios
-      .get(`api/v1/items/${id}`)
-      .then(res => {
-        const book = res.data
-        this.setState({
-          book,
-        })
-      })
-      .catch(error => {
-        console.log(error)
-      })
-  }
-
+  // Render book details
   renderBookDetails() {
-    const { id, title, author, price, image } = this.state.book
+    const { author, id, image, price, title } = this.state.book
+    let parsedPrice = price.toFixed(2) // Add second digit in case it's missing
+
     return (
       <div className="item-details">
         <div className="item-details__picture">
@@ -42,28 +33,49 @@ class ItemDetails extends Component {
           <h3>ID: {id}</h3>
           <h3>Title: {title}</h3>
           <h3>Author: {author}</h3>
-          <h3>Price: {price}0</h3>
+          <h3>Price: {parsedPrice}</h3>
         </div>
       </div>
     )
+  }
+
+  componentDidMount() {
+    const { id } = this.props
+    console.log(id)
+
+    // Fetch requested item and set it in state
+    axios
+      .get(`api/v1/items/${id}`)
+      .then(res => {
+        // In success, set fetched item in state
+        const book = res.data
+        this.setState({
+          book,
+        })
+      })
+      .catch(error => {
+        // In failure, log error
+        console.log(error)
+      })
   }
 
   render() {
     const book = this.state.book
     return (
       <div>
-        {book.length === 0 ? <h1>Loading book</h1> : this.renderBookDetails()}
+        {/* Check if state is already set before rendering book details */}
+        {book.id && this.renderBookDetails()}
       </div>
     )
   }
 }
 
 ItemDetails.propTypes = {
-  selectedItemId: PropTypes.number,
+  id: PropTypes.number,
 }
 
 ItemDetails.defaultProps = {
-  selectedItemId: undefined,
+  id: undefined,
 }
 
 export default ItemDetails

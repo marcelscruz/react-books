@@ -1,6 +1,11 @@
+// ***** React ***** //
 import React, { Component } from 'react'
-import Form from './Form'
+
+// ***** Libraries ***** //
 import axios from 'axios'
+
+// ***** Components ***** //
+import Form from './Form'
 
 class Edit extends Component {
   constructor(props) {
@@ -11,37 +16,44 @@ class Edit extends Component {
     }
   }
 
+  // Method passed to Form as props
   onSubmit = book => {
-    const { id, title, author, price, image } = book
-    const parsedPrice = parseFloat(price)
+    const { author, id, image, price, title } = book
+    const parsedPrice = parseFloat(price) // Price is passed as string from Form
 
+    // Communicating directly to JSON Server
     axios
       .put(`http://localhost:3004/books/${id}`, {
-        title,
         author,
-        price: parsedPrice,
         image,
+        price: parsedPrice,
+        title,
       })
-      .then(res => {
+      .then(() => {
+        // In success, return to List
         this.props.history.push('/')
       })
       .catch(error => {
+        // In failure, log error
         console.log(error)
       })
   }
 
   componentDidMount() {
-    const id = this.props.match.params.id
+    const id = this.props.match.params.id // Find id from URL
 
+    // Fetch requested item and set it in state to be passed to Form
     axios
       .get(`/api/v1/items/${id}`)
       .then(res => {
+        // In success, set fetched item in state
         const book = res.data
         this.setState({
           book,
         })
       })
       .catch(error => {
+        // In failure, log error
         console.log(error)
       })
   }
@@ -53,8 +65,8 @@ class Edit extends Component {
         <div className="section__header">
           <h1>Edit book</h1>
         </div>
-        {/* Checks if state is already filled before rendering Form */}
-        {this.state.book.id && <Form onSubmit={this.onSubmit} book={book} />}
+        {/* Check if state is already set before rendering Form */}
+        {book.id && <Form onSubmit={this.onSubmit} book={book} />}
       </div>
     )
   }

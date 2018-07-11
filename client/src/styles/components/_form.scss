@@ -27,20 +27,3 @@
 .form__buttons__container {
   margin: 1rem auto;
 }
-
-.form__button {
-  @extend .button;
-
-  // background: $off-black;
-  background: darken($off-white, 5%);
-  border-color: $off-black;
-  color: $off-black;
-  font-size: 1rem;
-  margin: 0 1rem;
-  padding: 0.5rem;
-}
-
-.form__button:hover {
-  background: $off-black;
-  color: $off-white;
-}

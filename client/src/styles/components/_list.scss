@@ -6,7 +6,7 @@
   border-right: $off-white 0.1rem solid;
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
-  box-shadow: $shadow;
+  box-shadow: 0 4px 10px #2e2e2e;
   color: $off-white;
   justify-content: center;
   display: flex;
@@ -30,15 +30,7 @@
   width: 8rem;
 }
 
-.list__filter__button {
-  @extend .button;
-
-  background: $off-black;
-  font-size: 1rem;
-  padding: 0.5rem;
-}
-
-.list__filter__button:hover {
-  background: $off-white;
-  color: $off-black;
+.select-input:focus,
+.select-input:active {
+  outline: red;
 }

@@ -1,3 +1,4 @@
+// ***** React ***** //
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -19,6 +20,7 @@ const ListItem = props => {
 
 ListItem.propTypes = {
   book: PropTypes.object.isRequired,
+  handleSelectedItem: PropTypes.func.isRequired,
 }
 
 export default ListItem
