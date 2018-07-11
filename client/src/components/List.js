@@ -17,7 +17,7 @@ class List extends Component {
     }
   }
 
-  fetchBooks() {
+  fetchBooks = () => {
     const { count, offset } = this.state
 
     axios
@@ -33,7 +33,6 @@ class List extends Component {
           books,
         })
         this.pagination(pages)
-        console.log(res.data)
       })
       .catch(error => {
         console.log(error)
@@ -89,10 +88,6 @@ class List extends Component {
     })
   }
 
-  // handleSearch = () => {
-  //   this.fetchBooks()
-  // }
-
   handleSelectedItem = id => {
     this.setState({
       selectedItemId: id,
@@ -112,20 +107,12 @@ class List extends Component {
   render() {
     const { books, count, offset, offsetOptions, selectedItemId } = this.state
     const countOptions = [
-      { value: 0, label: 'All' },
-      { value: 5, label: '5 Items' },
-      { value: 10, label: '10 Items' },
-      { value: 15, label: '15 Items' },
-      { value: 20, label: '20 Items' },
+      { value: 0, label: 'All books' },
+      { value: 5, label: '5 books' },
+      { value: 10, label: '10 books' },
+      { value: 15, label: '15 books' },
+      { value: 20, label: '20 books' },
     ]
-
-    // const offsetOptions = [
-    //   { value: 0, label: 'None' },
-    //   { value: 5, label: '5 Items' },
-    //   { value: 10, label: '10 Items' },
-    //   { value: 15, label: '15 Items' },
-    //   { value: 20, label: '20 Items' },
-    // ]
 
     return (
       <div className="list">
@@ -142,16 +129,10 @@ class List extends Component {
             <SelectInput
               value={offset}
               onChange={this.onOffsetChange}
-              // options={offsetOptions}
               options={offsetOptions}
             />
           )}
-
-          {/* <button className="list__filter__button" onClick={this.handleSearch}>
-            Search
-          </button> */}
         </div>
-
         {books.length === 0 ? (
           <h1>Fetching books...</h1>
         ) : (
@@ -160,6 +141,7 @@ class List extends Component {
         <ItemModal
           selectedItemId={selectedItemId}
           handleClearSelectedItem={this.handleClearSelectedItem}
+          fetchBooks={this.fetchBooks}
         />
       </div>
     )
