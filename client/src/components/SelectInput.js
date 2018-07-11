@@ -9,7 +9,7 @@ import 'react-select/dist/react-select.css'
 const SelectInput = props => {
   const { onChange, options, value } = props
 
-  // Handle input change and send back to List
+  // Handle input change and send it back to List
   const handleChange = selectedOption => {
     onChange(selectedOption)
   }

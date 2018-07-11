@@ -1,7 +1,7 @@
 {
   "name": "books",
   "version": "1.0.0",
-  "description": "",
+  "description": "Manage your books more easily",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.18.0",
@@ -13,12 +13,14 @@
     "concurrently": "^3.6.0"
   },
   "scripts": {
+    "install": "cd client && yarn install",
     "client": "cd client && yarn start",
     "server": "nodemon server.js",
     "json:server": "cd db && json-server --watch db.json --port 3004 --routes routes.json",
     "dev": "concurrently --kill-others-on-fail \"yarn json:server\" \"yarn server\" \"yarn client\"",
-    "heroku-postbuild": "cd client && yarn && yarn run build"
+    "build:prod": "cd client && yarn build",
+    "prod": "concurrently --kill-others-on-fail \"yarn json:server\" \"yarn server\""
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Marcel Cruz",
+  "license": "MIT"
 }
