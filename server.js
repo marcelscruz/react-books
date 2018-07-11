@@ -3,7 +3,6 @@ const paginate = require('express-paginate')
 const path = require('path')
 const bodyParser = require('body-parser')
 const axios = require('axios')
-const proxy = require('subdomain-router')
 
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 
@@ -27,14 +26,5 @@ require('./routes/fetchByID')(app)
 require('./routes/add')(app)
 
 const PORT = process.env.PORT || 5000
-
-// proxy({
-//   host: 'http://localhost',
-//   subdomains: {
-//     '': 3000, // 'example.com'             <=> localhost:10000
-//     client: 3000,
-//     api: 3004, // 'www.example.com'         <=> localhost:10000
-//   },
-// }).listen(process.env.PORT || 5000)
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`))

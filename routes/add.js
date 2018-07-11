@@ -1,10 +1,9 @@
 const axios = require('axios')
 
 module.exports = app => {
-  // Endpoint to add a new book
-  app.post('/api/v1/add', (req, res) => {
-    console.log(req.body)
-    const { title, author, price } = req.body
+  // Endpoint to add a new book from Add
+  app.post('/api/v1/items/add', (req, res) => {
+    const { title, author, price, image } = req.body
 
     // Using json-server
     axios
@@ -12,6 +11,7 @@ module.exports = app => {
         title,
         author,
         price,
+        image,
       })
       .then(res => {
         console.log(res)

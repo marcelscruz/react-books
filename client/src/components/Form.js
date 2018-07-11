@@ -7,10 +7,11 @@ class Form extends Component {
     super(props)
 
     this.state = {
-      title: '',
-      author: '',
-      price: '',
-      image: '',
+      id: props.book.id,
+      title: props.book.title,
+      author: props.book.author,
+      price: props.book.price,
+      image: props.book.image,
     }
   }
 
@@ -45,14 +46,10 @@ class Form extends Component {
   onSubmit = e => {
     e.preventDefault()
 
-    const { title, author, price, image } = this.state
-
-    console.log('title', title)
-    console.log('author', author)
-    console.log('price', price)
-    console.log('image', image)
+    const { id, title, author, price, image } = this.state
 
     this.props.onSubmit({
+      id,
       title,
       author,
       price,
@@ -134,4 +131,15 @@ export default Form
 
 Form.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  book: PropTypes.object,
+}
+
+Form.defaultProps = {
+  book: {
+    id: '',
+    title: '',
+    author: '',
+    price: 0,
+    image: '',
+  },
 }

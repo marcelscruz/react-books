@@ -4,16 +4,21 @@ module.exports = app => {
   // Endpoint to fetch all the list of books
   app.get('/api/v1/items', async (req, res, next) => {
     res.setHeader('Content-Type', 'application/json')
-    const { count, offset } = req.query
+    let { count, offset } = req.query
 
     let url = `http://localhost:3004/books`
 
+    // count is string
+    if (count == 0) {
+      count = undefined
+    }
+
     if (offset && !count) {
-      url = `http://localhost:3004/books?_start=${offset}`
+      url += `?_start=${offset}`
     } else if (!offset && count) {
-      url = `http://localhost:3004/books?_limit=${count}`
+      url += `?_limit=${count}`
     } else if (offset && count) {
-      url = `http://localhost:3004/books?_start=${offset}&_limit=${count}`
+      url += `?_start=${offset}&_limit=${count}`
     }
 
     console.log('url', url)

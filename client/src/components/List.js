@@ -88,7 +88,7 @@ class List extends Component {
   render() {
     const { books, count, offset, selectedItemId } = this.state
     const countOptions = [
-      { value: undefined, label: 'All' },
+      { value: 0, label: 'All' },
       { value: 5, label: '5 Items' },
       { value: 10, label: '10 Items' },
       { value: 15, label: '15 Items' },
@@ -119,7 +119,7 @@ class List extends Component {
             options={offsetOptions}
           />
 
-          <button class="list__filter__button" onClick={this.handleSearch}>
+          <button className="list__filter__button" onClick={this.handleSearch}>
             Search
           </button>
         </div>

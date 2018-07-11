@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Modal from 'react-modal'
 import ItemDetails from './ItemDetails'
@@ -13,6 +14,12 @@ const ItemModal = props => (
     className="modal"
   >
     <ItemDetails selectedItemId={props.selectedItemId} />
+    <Link to={`/edit/${props.selectedItemId}`}>
+      <button className="modal__button">Edit</button>
+    </Link>
+    <button className="modal__button" onClick={props.handleClearSelectedItem}>
+      Delete
+    </button>
     <button className="modal__button" onClick={props.handleClearSelectedItem}>
       Close
     </button>

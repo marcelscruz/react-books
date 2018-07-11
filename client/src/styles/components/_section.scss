@@ -7,6 +7,7 @@
 .section__header {
   align-items: center;
   background: $off-black;
+  border-bottom: $off-white 0.1rem solid;
   box-shadow: $shadow;
   color: $off-white;
   display: flex;
