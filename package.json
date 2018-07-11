@@ -13,10 +13,14 @@
     "concurrently": "^3.6.0"
   },
   "scripts": {
-    "client": "cd client && yarn start",
+    "install": "cd client && yarn install",
+    "client:dev": "cd client && yarn start",
+    "client:prod": "cd client && yarn && yarn run build",
     "server": "nodemon server.js",
     "json:server": "cd db && json-server --watch db.json --port 3004 --routes routes.json",
-    "dev": "concurrently --kill-others-on-fail \"yarn json:server\" \"yarn server\" \"yarn client\"",
+    "dev": "concurrently --kill-others-on-fail \"yarn json:server\" \"yarn server\" \"yarn client:dev\"",
+    "prod": "concurrently --kill-others-on-fail \"yarn json:server\" \"yarn server\" \"yarn client:prod\"",
+    "start": "concurrently --kill-others-on-fail \"yarn json:server\" \"yarn server\"",
     "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "author": "",
