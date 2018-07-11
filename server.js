@@ -6,10 +6,8 @@ const express = require('express')
 
 const app = express()
 
-// Serve static files from the React app if in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')))
-}
+// Serve client static files if in production
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 // API endpoints
 require('./routes/fetchAll')(app)
