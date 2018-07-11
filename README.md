@@ -1,4 +1,4 @@
-# Books App
+# The Book Centre
 
 Manage your library easily with this app.
 
