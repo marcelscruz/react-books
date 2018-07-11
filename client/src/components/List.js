@@ -127,7 +127,7 @@ class List extends Component {
         {books.length === 0 ? (
           <h1>Fetching books...</h1>
         ) : (
-          <div className="list-item">{this.renderBooksList()}</div>
+          <div className="content-container">{this.renderBooksList()}</div>
         )}
         <ItemModal
           selectedItemId={selectedItemId}

@@ -1,0 +1,46 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.input__box {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  label {
+    font-size: 1rem;
+  }
+}
+
+.form__input {
+  align-self: flex-end;
+  font-size: 1rem;
+  height: 2rem;
+  margin: 0.5rem 0 0.5rem 2rem;
+  outline: none;
+  padding: 0.5rem;
+  width: 25rem;
+}
+
+.form__buttons__container {
+  margin: 1rem auto;
+}
+
+.form__button {
+  @extend .button;
+
+  // background: $off-black;
+  background: darken($off-white, 5%);
+  border-color: $off-black;
+  color: $off-black;
+  font-size: 1rem;
+  margin: 0 1rem;
+  padding: 0.5rem;
+}
+
+.form__button:hover {
+  background: $off-black;
+  color: $off-white;
+}

@@ -31,16 +31,11 @@
 }
 
 .list__filter__button {
+  @extend .button;
+
   background: $off-black;
-  border: $off-white solid 0.1rem;
-  border-radius: 0.3rem;
-  color: $off-white;
-  cursor: pointer;
   font-size: 1rem;
-  outline: none;
   padding: 0.5rem;
-  transition: linear 0.2s;
-  width: 7rem;
 }
 
 .list__filter__button:hover {

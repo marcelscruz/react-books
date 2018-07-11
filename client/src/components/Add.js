@@ -24,8 +24,10 @@ class Add extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Add page</h1>
+      <div className="section">
+        <div className="section__header">
+          <h1>Add book</h1>
+        </div>
         <Form onSubmit={this.onSubmit} />
       </div>
     )

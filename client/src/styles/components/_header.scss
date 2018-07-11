@@ -6,27 +6,15 @@
   color: $off-white;
   display: flex;
   font-size: $s-size;
-  display: flex;
   height: 5rem;
+  justify-content: space-around;
+  padding: 0 10rem;
   width: 100vw;
   z-index: 1;
 }
 
-.header__title {
-  left: -20rem;
-  position: relative;
-}
-
 .header__button {
-  border: $off-white solid 0.1rem;
-  border-radius: 0.3rem;
-  color: $off-white;
-  font-size: 1.3rem;
-  left: -10rem;
-  padding: 0.7rem;
-  position: relative;
-  width: 7rem;
-  transition: linear 0.2s;
+  @extend .button;
 }
 
 .header__button:hover {

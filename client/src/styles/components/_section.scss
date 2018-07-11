@@ -1,0 +1,22 @@
+.section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.section__header {
+  align-items: center;
+  background: $off-black;
+  box-shadow: $shadow;
+  color: $off-white;
+  display: flex;
+  flex-direction: column;
+  font-size: $s-size;
+  justify-content: center;
+  height: 5rem;
+  width: 100%;
+
+  h1 {
+    font-weight: 300;
+  }
+}

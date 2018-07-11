@@ -62,46 +62,61 @@ class Form extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            className="form__input"
-            placeholder="Title"
-            value={this.state.title}
-            onChange={this.onTitleChange}
-            autoFocus
-            required
-          />
-          <input
-            type="text"
-            className="form__input"
-            placeholder="Author"
-            value={this.state.author}
-            onChange={this.onAuthorChange}
-            required
-          />
-          <input
-            type="number"
-            className="form__input"
-            placeholder="Price"
-            value={this.state.price}
-            onChange={this.onPriceChange}
-            required
-          />
-          <input
-            type="text"
-            className="form__input"
-            placeholder="Image link"
-            value={this.state.image}
-            onChange={this.onImageChange}
-            required
-          />
+      <div className="content-container">
+        <form onSubmit={this.onSubmit} className="form">
+          <div className="input__box">
+            <label>Title</label>
+            <input
+              type="text"
+              className="form__input"
+              placeholder="Insert title"
+              value={this.state.title}
+              onChange={this.onTitleChange}
+              autoFocus
+              required
+            />
+          </div>
 
-          <div className="form__buttons">
-            <button className="button">Save</button>
+          <div className="input__box">
+            <label>Author</label>
+            <input
+              type="text"
+              className="form__input"
+              placeholder="Insert author"
+              value={this.state.author}
+              onChange={this.onAuthorChange}
+              required
+            />
+          </div>
+
+          <div className="input__box">
+            <label>Price</label>
+            <input
+              type="number"
+              className="form__input"
+              placeholder="Insert price"
+              value={this.state.price}
+              onChange={this.onPriceChange}
+              required
+            />
+          </div>
+
+          <div className="input__box">
+            <label>Image URL</label>
+            <input
+              type="text"
+              className="form__input"
+              placeholder="Insert image URL"
+              value={this.state.image}
+              onChange={this.onImageChange}
+              required
+            />
+          </div>
+
+          <div className="form__buttons__container">
+            <button className="form__button">Save</button>
             <button
-              className="button"
+              className="form__button"
               onClick={() => {
                 history.push('/')
               }}
