@@ -11,8 +11,9 @@ class List extends Component {
     this.state = {
       books: [],
       count: 10,
-      offset: 0,
+      offset: 1,
       selectedItemId: undefined,
+      offsetOptions: [],
     }
   }
 
@@ -27,10 +28,12 @@ class List extends Component {
         },
       })
       .then(res => {
-        const books = res.data
+        const { books, pages } = res.data
         this.setState({
           books,
         })
+        this.pagination(pages)
+        console.log(res.data)
       })
       .catch(error => {
         console.log(error)
@@ -50,24 +53,45 @@ class List extends Component {
 
   onCountChange = optionSelected => {
     const count = optionSelected.value
-    this.setState({
-      count,
-    })
+    this.setState(
+      {
+        count,
+        offset: 1,
+      },
+      () => {
+        this.fetchBooks()
+      },
+    )
   }
 
   onOffsetChange = optionSelected => {
     const offset = optionSelected.value
+    this.setState(
+      {
+        offset,
+      },
+      () => {
+        this.fetchBooks()
+      },
+    )
+  }
+
+  pagination = pages => {
+    const offsetOptions = []
+    for (let i = 1; i <= pages; i++) {
+      offsetOptions.push({
+        value: i,
+        label: `${i}`,
+      })
+    }
     this.setState({
-      offset,
+      offsetOptions,
     })
   }
 
-  handleSearch = () => {
-    console.log('search')
-    console.log(this.state.count)
-    console.log(this.state.offset)
-    this.fetchBooks()
-  }
+  // handleSearch = () => {
+  //   this.fetchBooks()
+  // }
 
   handleSelectedItem = id => {
     this.setState({
@@ -86,7 +110,7 @@ class List extends Component {
   }
 
   render() {
-    const { books, count, offset, selectedItemId } = this.state
+    const { books, count, offset, offsetOptions, selectedItemId } = this.state
     const countOptions = [
       { value: 0, label: 'All' },
       { value: 5, label: '5 Items' },
@@ -95,13 +119,13 @@ class List extends Component {
       { value: 20, label: '20 Items' },
     ]
 
-    const offsetOptions = [
-      { value: 0, label: 'None' },
-      { value: 5, label: '5 Items' },
-      { value: 10, label: '10 Items' },
-      { value: 15, label: '15 Items' },
-      { value: 20, label: '20 Items' },
-    ]
+    // const offsetOptions = [
+    //   { value: 0, label: 'None' },
+    //   { value: 5, label: '5 Items' },
+    //   { value: 10, label: '10 Items' },
+    //   { value: 15, label: '15 Items' },
+    //   { value: 20, label: '20 Items' },
+    // ]
 
     return (
       <div className="list">
@@ -112,16 +136,20 @@ class List extends Component {
             onChange={this.onCountChange}
             options={countOptions}
           />
-          <p className="select-input__label">Skip</p>
-          <SelectInput
-            value={offset}
-            onChange={this.onOffsetChange}
-            options={offsetOptions}
-          />
+          <p className="select-input__label">Page</p>
 
-          <button className="list__filter__button" onClick={this.handleSearch}>
+          {offset.length !== 0 && (
+            <SelectInput
+              value={offset}
+              onChange={this.onOffsetChange}
+              // options={offsetOptions}
+              options={offsetOptions}
+            />
+          )}
+
+          {/* <button className="list__filter__button" onClick={this.handleSearch}>
             Search
-          </button>
+          </button> */}
         </div>
 
         {books.length === 0 ? (
