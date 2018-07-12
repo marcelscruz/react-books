@@ -4,11 +4,12 @@ import PropTypes from 'prop-types'
 
 const ListItem = props => {
   const { id, title } = props.book
+  const { handleSelectedItem } = props
   return (
     <div
       className="item"
       onClick={() => {
-        props.handleSelectedItem(id)
+        handleSelectedItem(id)
       }}
     >
       <h1>

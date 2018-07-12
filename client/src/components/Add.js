@@ -11,14 +11,13 @@ const Add = ({ history }) => {
   // Method passed to Form as props
   const onSubmit = book => {
     const { author, image, price, title } = book
-    const parsedPrice = parseFloat(price) // Price is passed as string from Form
 
     // Communicating directly to JSON Server
     axios
       .post('http://localhost:3004/books', {
         author,
         image,
-        price: parsedPrice,
+        price,
         title,
       })
       .then(() => {

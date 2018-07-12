@@ -2,12 +2,10 @@
   align-items: center;
   background: $off-black;
   border-bottom: $off-white 0.1rem solid;
-  border-left: $off-white 0.1rem solid;
-  border-right: $off-white 0.1rem solid;
   border-bottom-left-radius: 0.3rem;
   border-bottom-right-radius: 0.3rem;
-  // border-bottom-left-radius: 4rem;
-  // border-bottom-right-radius: 4rem;
+  border-left: $off-white 0.1rem solid;
+  border-right: $off-white 0.1rem solid;
   box-shadow: 0 4px 10px #2e2e2e;
   color: $off-white;
   justify-content: center;
@@ -30,9 +28,4 @@
   margin: 0 2rem 0 0.5rem;
   outline: none;
   width: 8rem;
-}
-
-.select-input:focus,
-.select-input:active {
-  outline: red;
 }

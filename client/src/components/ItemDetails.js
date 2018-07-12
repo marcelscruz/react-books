@@ -41,7 +41,6 @@ class ItemDetails extends Component {
 
   componentDidMount() {
     const { id } = this.props
-    console.log(id)
 
     // Fetch requested item and set it in state
     axios
@@ -60,7 +59,7 @@ class ItemDetails extends Component {
   }
 
   render() {
-    const book = this.state.book
+    const { book } = this.state
     return (
       <div>
         {/* Check if state is already set before rendering book details */}

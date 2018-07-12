@@ -1,7 +1,7 @@
 // ***** React ***** //
 import React from 'react'
-import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 // ***** Libraries ***** //
 import axios from 'axios'
@@ -11,7 +11,7 @@ import Modal from 'react-modal'
 import ItemDetails from './ItemDetails'
 
 const ItemModal = props => {
-  const { fetchBooks, id, handleClearSelectedItem } = props
+  const { fetchBooks, handleClearSelectedItem, id } = props
 
   // Handle item deletion
   const onDelete = () => {
@@ -31,12 +31,12 @@ const ItemModal = props => {
 
   return (
     <Modal
+      ariaHideApp={false}
+      className="modal"
+      closeTimeoutMS={200}
+      contentLabel="Selected option"
       isOpen={!!id}
       onRequestClose={handleClearSelectedItem}
-      contentLabel="Selected option"
-      ariaHideApp={false}
-      closeTimeoutMS={200}
-      className="modal"
     >
       <ItemDetails id={id} />
       <Link to={`/edit/${id}`}>
@@ -53,9 +53,9 @@ const ItemModal = props => {
 }
 
 ItemModal.propTypes = {
-  id: PropTypes.number,
-  handleClearSelectedItem: PropTypes.func.isRequired,
   fetchBooks: PropTypes.func.isRequired,
+  handleClearSelectedItem: PropTypes.func.isRequired,
+  id: PropTypes.number,
 }
 
 ItemModal.defaultProps = {

@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 // ***** Components ***** //
+import ItemModal from './ItemModal'
 import ListItem from './ListItem'
 import SelectInput from './SelectInput'
-import ItemModal from './ItemModal'
 
 class List extends Component {
   constructor(props) {
@@ -18,8 +18,8 @@ class List extends Component {
       books: [],
       count: 10,
       offset: 1,
-      selectedItemId: undefined,
       offsetOptions: [{}],
+      selectedItemId: undefined,
     }
   }
 
@@ -56,8 +56,8 @@ class List extends Component {
 
     for (let i = 1; i <= pages; i++) {
       offsetOptions.push({
-        value: i,
         label: `${i}`,
+        value: i,
       })
     }
 
@@ -68,7 +68,7 @@ class List extends Component {
 
   // Render list of books
   renderBooksList() {
-    const books = this.state.books
+    const { books } = this.state
 
     return (
       <div className="content-container">
@@ -143,11 +143,11 @@ class List extends Component {
     } = this.state
 
     const countOptions = [
-      { value: 0, label: 'All books' },
-      { value: 5, label: '5 books' },
-      { value: 10, label: '10 books' },
-      { value: 15, label: '15 books' },
-      { value: 20, label: '20 books' },
+      { label: 'All books', value: 0 },
+      { label: '5 books', value: 5 },
+      { label: '10 books', value: 10 },
+      { label: '15 books', value: 15 },
+      { label: '20 books', value: 20 },
     ]
 
     return (
@@ -155,16 +155,16 @@ class List extends Component {
         <div className="list__filter">
           <p className="select-input__label">Show</p>
           <SelectInput
-            value={count}
             onChange={this.onCountChange}
             options={countOptions}
+            value={count}
           />
 
           <p className="select-input__label">Page</p>
           <SelectInput
-            value={offset}
             onChange={this.onOffsetChange}
             options={offsetOptions}
+            value={offset}
           />
 
           <Link to="/add">
@@ -178,9 +178,9 @@ class List extends Component {
           this.renderBooksList()
         )}
         <ItemModal
-          id={id}
-          handleClearSelectedItem={this.handleClearSelectedItem}
           fetchBooks={this.fetchBooks}
+          handleClearSelectedItem={this.handleClearSelectedItem}
+          id={id}
         />
       </div>
     )

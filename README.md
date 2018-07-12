@@ -32,7 +32,7 @@ yarn install
 yarn dev
 ```
 
-Go to the `localhost:3000`
+Go to `localhost:3000`
 
 ### Running in production
 
@@ -41,14 +41,14 @@ yarn build:prod
 yarn prod
 ```
 
-Go to the `localhost:5000`
+Go to `localhost:5000`
 
 ## Built with
 
 - React
 - ES6
 - Sass
-- Node
+- Node.js
 - JSON Server
 
 ## Author

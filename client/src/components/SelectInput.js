@@ -17,19 +17,19 @@ const SelectInput = props => {
   return (
     <Select
       className="select-input"
-      value={value}
+      clearable={false}
       onChange={handleChange}
       options={options}
-      clearable={false}
       searchable={false}
+      value={value}
     />
   )
 }
 
 SelectInput.propTypes = {
-  value: PropTypes.number.isRequired,
-  options: PropTypes.arrayOf(PropTypes.object).isRequired,
   onChange: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(PropTypes.object).isRequired,
+  value: PropTypes.number.isRequired,
 }
 
 export default SelectInput

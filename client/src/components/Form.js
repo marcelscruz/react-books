@@ -11,11 +11,11 @@ class Form extends Component {
 
     // Either use default props or props passed from Edit
     this.state = {
-      id: props.book.id,
-      title: props.book.title,
       author: props.book.author,
-      price: props.book.price,
+      id: props.book.id,
       image: props.book.image,
+      price: props.book.price,
+      title: props.book.title,
     }
   }
 
@@ -55,15 +55,17 @@ class Form extends Component {
   onSubmit = e => {
     e.preventDefault() // Avoid page refresh caused by form submit
 
-    const { id, title, author, price, image } = this.state
+    const { author, id, image, price, title } = this.state
+    const { onSubmit } = this.props
+    const parsedPrice = parseFloat(price) // Price is passed as string from Form
 
     // Method passed as props, will communicate to JSON Server
-    this.props.onSubmit({
-      id,
-      title,
+    onSubmit({
       author,
-      price,
+      id,
       image,
+      price: parsedPrice,
+      title,
     })
   }
 
@@ -74,49 +76,49 @@ class Form extends Component {
           <div className="input__box">
             <label>Title</label>
             <input
-              type="text"
-              className="form__input"
-              placeholder="Insert title"
-              value={this.state.title}
-              onChange={this.onTitleChange}
               autoFocus
+              className="form__input"
+              onChange={this.onTitleChange}
+              placeholder="Insert title"
               required
+              type="text"
+              value={this.state.title}
             />
           </div>
 
           <div className="input__box">
             <label>Author</label>
             <input
-              type="text"
               className="form__input"
-              placeholder="Insert author"
-              value={this.state.author}
               onChange={this.onAuthorChange}
+              placeholder="Insert author"
               required
+              type="text"
+              value={this.state.author}
             />
           </div>
 
           <div className="input__box">
             <label>Price</label>
             <input
-              type="number"
               className="form__input"
-              placeholder="Insert price"
-              value={this.state.price}
               onChange={this.onPriceChange}
+              placeholder="Insert price"
               required
+              type="number"
+              value={this.state.price}
             />
           </div>
 
           <div className="input__box">
             <label>Image URL</label>
             <input
-              type="text"
               className="form__input"
-              placeholder="Insert image URL"
-              value={this.state.image}
               onChange={this.onImageChange}
+              placeholder="Insert image URL"
               required
+              type="text"
+              value={this.state.image}
             />
           </div>
 
@@ -142,16 +144,16 @@ class Form extends Component {
 export default Form
 
 Form.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
   book: PropTypes.object,
+  onSubmit: PropTypes.func.isRequired,
 }
 
 Form.defaultProps = {
   book: {
-    id: '',
-    title: '',
     author: '',
-    price: '',
+    id: '',
     image: '',
+    price: '',
+    title: '',
   },
 }
