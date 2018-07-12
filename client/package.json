@@ -1,6 +1,9 @@
 {
   "name": "books",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Marcel Cruz",
+  "description": "Manage your books more easily",
+  "license": "MIT",
   "private": true,
   "proxy": "http://localhost:5000",
   "scripts": {
