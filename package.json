@@ -18,7 +18,9 @@
     "json:server": "cd db && json-server --watch db.json --port 3004 --routes routes.json",
     "dev": "concurrently --kill-others-on-fail \"yarn run json:server\" \"yarn run server\" \"yarn run client\"",
     "build:prod": "cd client && yarn run build",
-    "prod": "concurrently --kill-others-on-fail \"yarn run json:server\" \"yarn run server\""
+    "prod": "concurrently --kill-others-on-fail \"yarn run json:server\" \"yarn run server\"",
+    "start": "concurrently --kill-others-on-fail \"yarn run json:server\" \"yarn run server\"",
+    "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "author": "Marcel Cruz",
   "license": "MIT"
