@@ -2,7 +2,7 @@
 
 Manage your library easily with this app.
 
-## Project
+## The app
 
 Now you can create records and manage all books you have in your library, including their title, author, price and cover.
 
